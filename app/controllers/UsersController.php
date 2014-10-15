@@ -32,8 +32,8 @@ class UsersController extends ControllerBase
     	$this->view->disable();
     	$result = array();
     	$result['success'] = false;
-            $result['user'] = array();
-            if ($this->request->isPost() == true) {
+        $result['user'] = array();
+        if ($this->request->isPost() == true) {
             $name = $this->request->getPost("name");
             $university = $this->request->getPost("university");
             $password = $this->request->getPost("password");
@@ -44,7 +44,9 @@ class UsersController extends ControllerBase
             $user->university = $university;
             $user->password = $password;
 
-            if ($user->create() == true) {
+            if ($user->create() == false) {
+                echo "Umh, We can't store robots right now";
+            }else{
                 $result['success'] = true;
                 $result['user'] = $user;
             }

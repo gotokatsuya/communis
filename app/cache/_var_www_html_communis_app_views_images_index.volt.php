@@ -4,7 +4,9 @@
 <title>sample</title>
 </head>
 <body>
-<form action="upload" method="post" enctype="multipart/form-data">
+<form action="images/upload" method="post" enctype="multipart/form-data">
+  <p><label for="uuide">ID：</label><input type="text" name="uuid" id="uuide" size="40"></p>
+  <p><label for="typee">ID：</label><input type="text" name="type" id="typee" size="40"></p>
   ファイル：<br />
   <input type="file" name="upfile" size="30" /><br />
   <br />
